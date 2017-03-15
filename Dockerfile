@@ -11,7 +11,7 @@ RUN pip install -r /requirements.txt
 COPY . /usr/src/app
 WORKDIR /usr/src/app
 
-EXPOSE 80
+EXPOSE 8080
 
 VOLUME ["/data"]
 
