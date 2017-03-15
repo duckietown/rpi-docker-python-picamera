@@ -1,0 +1,12 @@
+local_resinos:
+  app-name: picam
+  build-triggers:
+    - demo.py: dd78caffaedc720d7c5b66e90f8d5147f61043b155aad26dc87a345ece0254d6
+    - requirements.txt: e7fe1611c65d72fdcb17e0ba746ddafe2647094d4989d44edeed9d636cf2a28c
+    - start.sh: a7580c82e8f814a2e24b3add29f605e63cbb594f79266c7be956a9e9f57f4598
+    - Dockerfile: d7db44047dd73bef65be310ec7c91dc01c344be27c01f85a983837037155b83e
+  environment: []
+ignore:
+  - .git
+  - node_modules/
+destination: /usr/src/app

@@ -1,7 +1,7 @@
-FROM resin/%%RESIN_MACHINE_NAME%%-python
+FROM resin/raspberrypi3-python
 
 #switch on systemd init system in container
-ENV INITSYSTEM on
+ENV INITSYSTEM off
 
 # pip install python deps from requirements.txt
 # For caching until requirements.txt changes
@@ -10,6 +10,10 @@ RUN pip install -r /requirements.txt
 
 COPY . /usr/src/app
 WORKDIR /usr/src/app
+
+EXPOSE 80
+
+VOLUME ["/data"]
 
 CMD ["bash","start.sh"]
 
