@@ -1,4 +1,4 @@
-# Docker(python + raspberry pi camera module) on ResinOS
+# (python + raspberry pi camera module) on Docker
 
 This is a simple app that demonstrates how to create a Docker container for the Raspberry Pi camera module.
 All it does is snap one photo every 3 seconds and then stores it in the /data directory on the PI.
@@ -9,9 +9,11 @@ That way you can view the image taken by simply using resin's public url.
 This example makes use of the awesome [picamera](http://picamera.readthedocs.org/en/release-1.8/) python module,
 which natively controls the camera module and does not depend on raspistill.
 
-To build and deploy on a ResinOS system use the [Resin Developer Toolbox](https://github.com/resin-os/resin-device-toolbox):
-```
-$ rdt push -s .
-```
+# Build & Publish
 
-
+To build & publish:
+```sh
+$ docker build . -t rpi-picam
+$ docker tag rpi-picam localhost:5000/rpi-picam
+$ docker push localhost:5000/rpi-picam
+```
