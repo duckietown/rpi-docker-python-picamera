@@ -1,13 +1,12 @@
-FROM resin/armv7hf-debian-qemu
+FROM maidbot/resin-raspberrypi3-qemu
 
 RUN [ "cross-build-start" ]
 
 #switch on systemd init system in container
 ENV INITSYSTEM off
 
-
 RUN apt-get update && apt-get install -y \
-		python-pip \
+        python-pip \
 	&& rm -rf /var/lib/apt/lists/*
 
 # pip install python deps from requirements.txt
