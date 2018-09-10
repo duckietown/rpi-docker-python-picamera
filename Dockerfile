@@ -20,7 +20,7 @@ RUN [ "cross-build-end" ]
 COPY . /usr/src/app
 WORKDIR /usr/src/app
 
-EXPOSE 8080
+EXPOSE 8081
 
 VOLUME ["/data"]
 
